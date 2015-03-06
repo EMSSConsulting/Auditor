@@ -3,9 +3,9 @@
 	"authors": ["Benjamin Pannell"],
 	"version": "1.0.0-*",
 	"dependencies": {
-		"Microsoft.AspNet.Http": "1.0.0-beta2",
-		"Microsoft.AspNet.HttpFeature": "1.0.0-beta2",
-		"Microsoft.AspNet.Mvc.Core": "6.0.0-beta2"
+		"Microsoft.AspNet.Http": "1.0.0-beta3",
+		"Microsoft.AspNet.FeatureModel": "1.0.0-beta3",
+		"Microsoft.AspNet.Mvc.Core": "6.0.0-beta3"
 	},
 
 	"frameworks": {
