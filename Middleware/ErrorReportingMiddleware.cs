@@ -34,7 +34,7 @@ namespace Auditor.Middleware
             }
             catch (Exception ex)
             {
-                await ReportException(context, ex);
+                ReportException(context, ex);
                 if(StopProcessing) throw;
             }
         }
