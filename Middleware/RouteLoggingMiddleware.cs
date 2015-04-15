@@ -23,9 +23,9 @@ namespace Auditor.Middleware
             var routeName = context.Request.Method + " " + context.Request.PathBase.Add(context.Request.Path).ToString();
             
             if (context.WasNotFound())
-                await LogNotFound(context, routeFeature ?? new RouteInformationFeature { RouteName = routeName }, context.GetFeature<IRouteNotFoundFeature>());
+                LogNotFound(context, routeFeature ?? new RouteInformationFeature { RouteName = routeName }, context.GetFeature<IRouteNotFoundFeature>());
             else
-                await LogRoute(context, routeFeature ?? new RouteInformationFeature { RouteName = routeName });
+                LogRoute(context, routeFeature ?? new RouteInformationFeature { RouteName = routeName });
         }
 
         protected abstract Task LogRoute(HttpContext context, IRouteInformationFeature routeInformation);
