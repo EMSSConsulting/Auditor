@@ -25,7 +25,7 @@ namespace Auditor.Middleware
                 return;
             }
 
-            await OnNotFound(context);
+            OnNotFound(context);
             await _next(context);
         }
 
