@@ -3,8 +3,8 @@
 	"authors": ["Benjamin Pannell"],
 	"version": "1.0.0-*",
 	"dependencies": {
-		"Microsoft.AspNet.Http": "1.0.0-beta4-11362",
-		"Microsoft.AspNet.Mvc": "6.0.0-beta4-13554"
+		"Microsoft.AspNet.Http": "1.0.0-beta4",
+		"Microsoft.AspNet.Mvc": "6.0.0-beta4"
 	},
 
 	"frameworks": {
