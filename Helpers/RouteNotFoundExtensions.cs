@@ -2,6 +2,7 @@
 using Auditor.Middleware;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
+using Microsoft.AspNet.Http.Features;
 using System;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace Auditor
 
         public static bool WasNotFound(this HttpContext context)
         {
-            return context.GetFeature<IRouteNotFoundFeature>() != null;
+            return context.Features.Get<IRouteNotFoundFeature>() != null;
         }
     }
 }
