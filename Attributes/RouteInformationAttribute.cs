@@ -1,5 +1,6 @@
 ﻿using Auditor.Features;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 
 namespace Auditor
@@ -16,7 +17,7 @@ namespace Auditor
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            context.HttpContext.SetFeature<IRouteInformationFeature>(new RouteInformationFeature() {
+            context.HttpContext.Features.Set<IRouteInformationFeature>(new RouteInformationFeature() {
                 RouteName = RouteName,
                 Arguments = context.ActionArguments
             });

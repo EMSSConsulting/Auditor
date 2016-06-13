@@ -1,6 +1,6 @@
 ﻿using Auditor.Features;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Threading.Tasks;
 
@@ -19,11 +19,11 @@ namespace Auditor.Middleware
         {
             await Next(context);
 
-            var routeFeature = context.GetFeature<IRouteInformationFeature>();
+            var routeFeature = context.Features.Get<IRouteInformationFeature>();
             var routeName = context.Request.Method + " " + context.Request.PathBase.Add(context.Request.Path).ToString();
             
             if (context.WasNotFound())
-                LogNotFound(context, routeFeature ?? new RouteInformationFeature { RouteName = routeName }, context.GetFeature<IRouteNotFoundFeature>());
+                LogNotFound(context, routeFeature ?? new RouteInformationFeature { RouteName = routeName }, context.Features.Get<IRouteNotFoundFeature>());
             else
                 LogRoute(context, routeFeature ?? new RouteInformationFeature { RouteName = routeName });
         }

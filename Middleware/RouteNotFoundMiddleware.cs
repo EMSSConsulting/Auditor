@@ -1,6 +1,6 @@
 ﻿using Auditor.Features;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Threading.Tasks;
 
@@ -17,9 +17,9 @@ namespace Auditor.Middleware
 
         public async Task Invoke(HttpContext context)
         {
-            context.SetFeature<IRouteNotFoundFeature>(new RouteNotFoundFeature());
+            context.Features.Set<IRouteNotFoundFeature>(new RouteNotFoundFeature());
 
-            if (context.Response.HeadersSent)
+            if (context.Response.HasStarted)
             {
                 await _next(context);
                 return;

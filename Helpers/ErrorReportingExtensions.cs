@@ -1,5 +1,7 @@
 ﻿using Auditor.Middleware;
-using Microsoft.AspNet.Builder;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using System.Reflection;
 
 namespace Auditor
 {

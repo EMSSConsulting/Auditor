@@ -1,8 +1,9 @@
 ﻿using Auditor.Features;
 using Auditor.Middleware;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using System;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Auditor
@@ -16,7 +17,7 @@ namespace Auditor
 
         public static bool WasNotFound(this HttpContext context)
         {
-            return context.GetFeature<IRouteNotFoundFeature>() != null;
+            return context.Features.Get<IRouteNotFoundFeature>() != null;
         }
     }
 }

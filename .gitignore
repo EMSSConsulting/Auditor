@@ -1,3 +1,4 @@
 ﻿*.user
 /bin
 /obj
+/.vs

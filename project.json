@@ -2,16 +2,18 @@
 	"description": "An error reporting and request logging framework for ASP.NET vNext applications",
 	"authors": ["Benjamin Pannell"],
 	"version": "1.0.0-*",
-	"dependencies": {
-		"Microsoft.AspNet.Http": "1.0.0-beta3",
-		"Microsoft.AspNet.FeatureModel": "1.0.0-beta3",
-		"Microsoft.AspNet.Mvc.Core": "6.0.0-beta3"
-	},
+  "dependencies": {
+    "Microsoft.AspNetCore.Http": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Http.Features": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final"
+  },
 
 	"frameworks": {
-		"aspnet50": {
-			"dependencies": {
-			}
+		"netcoreapp1.0": {
+      "imports": [
+        "portable-dnxcore50+net45+win8",
+        "portable-net40+win8"
+      ]
 		}
 	}
 }
